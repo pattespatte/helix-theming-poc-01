@@ -4,7 +4,8 @@
   "main": "dist/helix.css",
   "scripts": {
     "build": "npm run build:css",
-    "build:css": "sass src/index.scss dist/helix.css"
+    "build:css": "sass src/index.scss dist/helix.css",
+    "watch": "sass src/index.scss dist/helix.css --watch"
   },
   "peerDependencies": {
     "@fkui/design": "*"

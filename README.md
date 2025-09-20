@@ -44,6 +44,10 @@ npm run build:vue     # Builds Vue components
 For development, you can watch for changes:
 
 ```bash
+# First make sure lerna is installed locally
+npm list lerna
+# Initialized lerna
+npx lerna init
 npm run watch
 ```
 

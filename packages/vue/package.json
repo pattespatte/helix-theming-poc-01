@@ -4,7 +4,8 @@
 	"main": "dist/vue.umd.js",
 	"module": "dist/vue.mjs",
 	"scripts": {
-		"build": "vite build"
+		"build": "vite build",
+		"watch": "vite build --watch"
 	},
 	"peerDependencies": {
 		"@fkui/vue": "*",
