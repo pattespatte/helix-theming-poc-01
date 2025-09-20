@@ -14,6 +14,9 @@ npm install
 npm run build:design
 npm run build:vue
 
+# For hot-reload (live editing you also need to run
+npm run watch
+
 # 3. Run the example
 cd example && npm run dev
 ```
