@@ -14,7 +14,7 @@ npm install
 npm run build:design
 npm run build:vue
 
-# For hot-reload (live editing you also need to run
+# For hot-reload (see changes during runtime) you also need to run
 npm run watch
 
 # 3. Run the example
@@ -47,11 +47,10 @@ npm run build:vue     # Builds Vue components
 For development, you can watch for changes:
 
 ```bash
-# First make sure lerna is installed locally
-npm list lerna
-# Initialized lerna
-npx lerna init
-npm run watch
+
+npm list lerna # First make sure lerna is installed locally
+npx lerna init # Initialized lerna
+npm run watch  # Run dev server
 ```
 
 ## Installation (for external projects)
