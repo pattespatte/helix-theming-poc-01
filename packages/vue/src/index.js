@@ -5,4 +5,4 @@ export * from '@fkui/vue';
 import '@helix/design';
 
 // Override specific components if needed
-export { default as EhmdsButton } from './components/Button.vue';
+export { default as HxButton } from './components/Button.vue';
