@@ -3,15 +3,17 @@
 	// Colors
 	--hx-primary: #232948;
 	--hx-secondary: #edf06f;
+	--hx-primary--hover: color-mix(in srgb, var(--hx-primary) 90%, white); // Lighter version of --hx-primary
+	--hx-color-action-text-inverted-default: #ffffff;
+	--hx-color-action-text-inverted-hover: var(--hx-secondary);
 
 	// Typography
 	--hx-font-family: 'Sweden Sans', sans-serif;
 	--hx-font-size-base: 16px;
 
-	// Spacing
-	--hx-spacing-unit: 8px;
-
 	// Map FKUI variables to Helix
-	--fk-color-primary: var(--hx-primary);
-	--fk-font-family: var(--hx-font-family);
+	--fkds-color-action-background-primary-default: var(--hx-primary);
+	--fkds-color-action-background-primary-hover: var(--hx-primary--hover);
+	--fkds-color-action-text-inverted-default: var(--hx-color-action-text-inverted-default);
+	--fkds-color-action-text-inverted-hover: var(--hx-color-action-text-inverted-hover);
 }

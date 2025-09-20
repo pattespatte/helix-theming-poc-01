@@ -1,7 +1,8 @@
-// Re-export all FKUI components
+// Re-export everything upstream
+// Reuse all FKUI components
 export * from '@fkui/vue';
 
-// Import Helix styles
+// Always include Helix design layer
 import '@helix/design';
 
 // Override specific components if needed

@@ -1,4 +1,5 @@
 // Override FKUI button styles
+.button.button--primary,
 .button--primary {
 	// Only override what needs to change
 	background-color: var(--hx-primary);
@@ -6,6 +7,7 @@
 	border-radius: .5rem; // Different from FKUI
 
 	&:hover {
-		background-color: #1a1f36; // Darker version of --hx-primary (#232948)
+		background-color: var(--hx-primary--hover);
+		color: var(--hx-color-action-text-inverted-hover);
 	}
 }
