@@ -1,0 +1,11 @@
+// SCSS Mixin for Easy Overrides
+@mixin helix-component($component-name) {
+	.fk-#{$component-name} {
+		@content;
+	}
+}
+
+// Usage:
+@include helix-component('button') {
+	// Your overrides
+}

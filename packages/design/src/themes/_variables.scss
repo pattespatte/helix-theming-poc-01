@@ -1,0 +1,17 @@
+// Override FKUI CSS custom properties
+:root {
+	// Colors
+	--hx-primary: #232948;
+	--hx-secondary: #edf06f;
+
+	// Typography
+	--hx-font-family: 'Sweden Sans', sans-serif;
+	--hx-font-size-base: 16px;
+
+	// Spacing
+	--hx-spacing-unit: 8px;
+
+	// Map FKUI variables to Helix
+	--fk-color-primary: var(--hx-primary);
+	--fk-font-family: var(--hx-font-family);
+}

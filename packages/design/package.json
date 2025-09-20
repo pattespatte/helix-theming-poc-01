@@ -1,0 +1,20 @@
+{
+  "name": "@helix/design",
+  "version": "1.0.0",
+  "main": "dist/helix.css",
+  "scripts": {
+    "build": "npm run build:css",
+    "build:css": "sass src/index.scss dist/helix.css"
+  },
+  "peerDependencies": {
+    "@fkui/design": "*"
+  },
+  "devDependencies": {
+    "sass": "^1.69.0"
+  },
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

@@ -1,0 +1,11 @@
+// Override FKUI button styles
+.fk-button {
+	// Only override what needs to change
+	background-color: var(--hx-primary);
+	font-family: var(--hx-font-family);
+	border-radius: .5rem; // Different from FKUI
+
+	&:hover {
+		background-color: #1a1f36; // Darker version of --hx-primary (#232948)
+	}
+}
