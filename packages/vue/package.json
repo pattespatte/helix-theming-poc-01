@@ -15,7 +15,7 @@
 		"@helix/design": "1.0.0"
 	},
 	"devDependencies": {
-		"vite": "7.1.6",
-		"@vitejs/plugin-vue": "^6.0.1"
+		"@vitejs/plugin-vue": "^6.0.1",
+		"vite": "^7.2.4"
 	}
 }

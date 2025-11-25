@@ -18,8 +18,15 @@ npm run build:vue
 npm run watch
 
 # 3. Run the example
-cd example && npm run dev
+npm run dev
+
 ```
+
+The command new npm run dev script starts:
+
+- Watch mode for the @helix/design package (SCSS compilation)
+- Watch mode for the @helix/vue package (JavaScript compilation)
+- Example development server with hot reload
 
 The example will be available at <http://localhost:3000>
 

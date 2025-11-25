@@ -2,6 +2,7 @@
   "name": "@helix/design",
   "version": "1.0.0",
   "main": "dist/helix.css",
+  "module": "src/index.js",
   "scripts": {
     "build": "npm run build:css",
     "build:css": "sass src/index.scss dist/helix.css",
