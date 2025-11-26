@@ -4,6 +4,7 @@ import { resolve } from 'path'
 
 export default defineConfig({
 	plugins: [vue()],
+	base: '/helix-theming-poc-01/',
 	server: {
 		port: 3001,
 		watch: {
