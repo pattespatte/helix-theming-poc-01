@@ -22,32 +22,32 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-      
+
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '20'
-        cache: 'yarn'
-        
+        cache: 'npm'
+
     - name: Install dependencies
-      run: yarn install --frozen-lockfile
-      
+      run: npm ci
+
     - name: Build design package
-      run: yarn run build:design
-      
+      run: npm run build:design
+
     - name: Build vue package
-      run: yarn run build:vue
-      
+      run: npm run build:vue
+
     - name: Build example application
-      run: cd example && yarn install --frozen-lockfile && yarn run build
-      
+      run: cd example && npm ci && npm run build
+
     - name: Setup Pages
       uses: actions/configure-pages@v4
-      
+
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
@@ -61,7 +61,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     if: github.ref == 'refs/heads/main'
-    
+
     steps:
     - name: Deploy to GitHub Pages
       id: deployment
