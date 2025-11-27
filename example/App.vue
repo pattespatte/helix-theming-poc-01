@@ -2,10 +2,18 @@
 	<div id="app">
 		<h1>Components</h1>
 		<h2>Helix components</h2>
-		<div class="masonry-container">
+		<div class="masonry-container">			
 			<section class="component-container">
-				<p><code>HxButton</code> component</p>
-				<HxButton variant="primary"> Helix Themed Button </HxButton>
+				<p><code>HxButton</code> component with <code>density-default</code> applied</p>
+				<HxButton variant="primary" class="density-default"> Helix Themed Button </HxButton>
+			</section>
+			<section class="component-container">
+				<p><code>HxButton</code> component with <code>density-dense</code> applied</p>
+				<HxButton variant="primary" class="density-dense"> Helix Themed Button </HxButton>
+			</section>
+			<section class="component-container">
+				<p><code>HxButton</code> component with <code>density-densest</code> applied</p>
+				<HxButton variant="primary" class="density-densest"> Helix Themed Button </HxButton>
 			</section>
 		</div>
 
@@ -19,7 +27,6 @@
 				</p>
 				<FTextField v-model="defaultValue" class="density-default" />
 			</section>
-
 			<section class="component-container">
 				<p>
 					<code>FTextField</code> component with
@@ -27,7 +34,6 @@
 				</p>
 				<FTextField v-model="denseValue" class="density-dense" />
 			</section>
-
 			<section class="component-container">
 				<p>
 					<code>FTextField</code> component with
