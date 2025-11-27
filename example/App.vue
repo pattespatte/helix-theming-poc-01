@@ -1,16 +1,27 @@
 <template>
 	<div id="app">
 		<h1>Components</h1>
+		<h2>Helix components</h2> 
 		<section class="component-container">
-			<p>Helix component, no custom styling</p>
-			<!-- Helix components automatically use FKUI with custom theme -->
+			<p><code>HxButton</code> component</p>
 			<HxButton variant="primary"> Helix Themed Button </HxButton>
 		</section>
 
+		<h2>FKUI components</h2> 
+		<p>This setup can still use FKUI components directly</p>
 		<section class="component-container">
-			<!-- Can still use FKUI components directly -->
-			<p>FKUI component, no custom styling</p>
-			<FTextField v-model="value" />
+			<p><code>FTextField</code> component with <code>density-default</code> applied</p>
+			<FTextField v-model="defaultValue" class="density-default" />
+		</section>
+
+		<section class="component-container">
+			<p><code>FTextField</code> component with <code>density-dense</code> applied</p>
+			<FTextField v-model="denseValue" class="density-dense" />
+		</section>
+
+		<section class="component-container">
+			<p><code>FTextField</code> component with <code>density-densest</code> applied</p>
+			<FTextField v-model="densestValue" class="density-densest" />
 		</section>
 	</div>
 </template>
@@ -22,6 +33,9 @@ import { FTextField } from "@fkui/vue";
 import "@helix/design"; // Import theme styles
 
 const value = ref("");
+const defaultValue = ref("");
+const denseValue = ref("");
+const densestValue = ref("");
 </script>
 
 <style>
@@ -38,6 +52,11 @@ body {
 	align-items: center;
 	min-height: 100vh;
 	background-color: #f5f5f5;
+}
+
+code {
+	margin: 0;
+	padding: 0;
 }
 
 .component-container {
