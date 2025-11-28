@@ -6,7 +6,7 @@ This is a theming proof-of-concept where:
 
 - **FKUI** is the base design system (Försäkringskassan's Designsystem)
 - **Helix** is a theme layer built on top of FKUI
-- The [`packages/vue/src/index.js`](packages/vue/src/index.js:3) re-exports all FKUI components
+- The [`packages/vue/src/index.js:3`](packages/vue/src/index.js) re-exports all FKUI components
 - The [`HxButton`](packages/vue/src/components/Button.vue:2) is a Helix-wrapped component that internally uses [`FButton`](packages/vue/src/components/Button.vue:2) from FKUI
 
 ## How to Comment Out FKUI Components
@@ -40,7 +40,7 @@ const value = ref("");
 
 ### Option 2: Modify the Helix Vue package export
 
-In [`packages/vue/src/index.js`](packages/vue/src/index.js:3), you could comment out the FKUI re-export:
+In [`packages/vue/src/index.js:3`](packages/vue/src/index.js), you could comment out the FKUI re-export:
 
 ```javascript
 // Re-export everything upstream

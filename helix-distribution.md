@@ -25,7 +25,7 @@
 
 ## 2. How Helix Works with FKUI
 
-**Re-export Strategy** ([`packages/vue/src/index.js`](packages/vue/src/index.js:3)):
+**Re-export Strategy** ([`packages/vue/src/index.js:3`](packages/vue/src/index.js)):
 
 ```javascript
 // Re-export everything upstream

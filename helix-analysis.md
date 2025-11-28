@@ -4,7 +4,7 @@
 
 The current setup in this POC follows the first approach: **"Let consumers use Helix and FKUI by just installing Helix"**
 
-In [`packages/vue/src/index.js`](packages/vue/src/index.js:3), we are re-exporting all FKUI components:
+In [`packages/vue/src/index.js:3`](packages/vue/src/index.js), we are re-exporting all FKUI components:
 
 ```javascript
 export * from '@fkui/vue';
