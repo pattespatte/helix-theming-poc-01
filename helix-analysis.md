@@ -4,17 +4,19 @@
 
 The current setup in this POC follows the first approach: **"Let consumers use Helix and FKUI by just installing Helix"**
 
-In [`packages/vue/src/index.js`](packages/vue/src/index.js:3), we are re-exporting all FKUI components:
+In [`packages/vue/src/index.js:3`](packages/vue/src/index.js), we are re-exporting all FKUI components:
 
 ```javascript
 export * from '@fkui/vue';
 ```
 
-This means when someone installs `@helix/vue`, they automatically get access to all FKUI components as well as the Helix-specific overrides like [`HxButton`](packages/vue/src/components/Button.vue:1).
+This means when someone installs `@helix/vue`, they automatically get access to all FKUI components as well as the Helix-specific overrides like [`HxButton`](packages/vue/src/components/Button.vue).
 
 ## Evaluating the Three Approaches
 
 ### 1. Current Approach: Let consumers use both Helix and FKUI
+
+Tested in branch: [`main`](../../tree/main)
 
 **Pros:**
 
@@ -30,6 +32,8 @@ This means when someone installs `@helix/vue`, they automatically get access to 
 
 ### 2. Restyle FKUI to match Helix
 
+Tested in branch: [`fkui-restyling`](../../tree/fkui-restyling)
+
 This would involve more extensive overrides in [`packages/design/src/overrides/_buttons.scss`](packages/design/src/overrides/_buttons.scss) for all FKUI components.
 
 **Pros:**
@@ -44,6 +48,8 @@ This would involve more extensive overrides in [`packages/design/src/overrides/_
 - Potential for CSS specificity conflicts
 
 ### 3. Wrap and block original FKUI components
+
+Tested in branch: [`fkui-wrapped-components`](../../tree/fkui-wrapped-components)
 
 In the current version of Helix, wrappers like `HxButton` are used. FKUI is excluded from the export.
 
