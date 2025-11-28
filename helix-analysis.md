@@ -1,4 +1,4 @@
-# Three approaches regarding the relationship between Helix and FKUI components
+# The relationship between Helix and FKUI components
 
 ## Current Architecture Analysis
 
@@ -10,7 +10,7 @@ In [`packages/vue/src/index.js`](packages/vue/src/index.js:3), we are re-exporti
 export * from '@fkui/vue';
 ```
 
-This means when someone installs `@helix/vue`, they automatically get access to all FKUI components as well as the Helix-specific overrides like [`HxButton`](packages/vue/src/components/Button.vue:2).
+This means when someone installs `@helix/vue`, they automatically get access to all FKUI components as well as the Helix-specific overrides like [`HxButton`](packages/vue/src/components/Button.vue:1).
 
 ## Evaluating the Three Approaches
 
@@ -43,7 +43,7 @@ This would involve more extensive overrides in [`packages/design/src/overrides/_
 - Still includes all FKUI code in bundles
 - Potential for CSS specificity conflicts
 
-### 3. Block FKUI components (approached used in current Helix)
+### 3. Block FKUI components (approach used in current Helix)
 
 **Technical Implementation Options:**
 
@@ -75,7 +75,7 @@ Looking at the current setup, the bundle size impact depends on:
 
 1. **Build Tool Configuration**: Modern bundlers (Vite, Webpack) can tree-shake unused exports
 2. **Import Patterns**: If developers use specific imports (`import { FButton } from '@helix/vue'`), unused components won't be included
-3. **CSS Overhead**: The main issue is that [`@helix/design`](packages/design/src/index.scss:2) imports the entire FKUI CSS bundle
+3. **CSS Overhead**: The main issue is that [`@helix/design`](packages/design/src/index.scss) imports the entire FKUI CSS bundle
 
 ## Recommendation
 
@@ -91,4 +91,4 @@ export * from '@fkui/vue'; // Current approach
 // Add deprecation warnings for direct FKUI usage
 ```
 
-We could also optimize the CSS by importing only needed FKUI styles rather than the entire bundle in [`packages/design/src/index.scss`](packages/design/src/index.scss:2).
+We could also optimize the CSS by importing only needed FKUI styles rather than the entire bundle in [`packages/design/src/index.scss:2`](packages/design/src/index.scss).
