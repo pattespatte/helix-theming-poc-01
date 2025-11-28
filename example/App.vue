@@ -18,7 +18,7 @@
 		</div>
 
 		<h2>FKUI components</h2>
-			<p>This setup can still use FKUI components directly</p>
+		<p>This setup can still use FKUI components directly</p>
 		<div class="masonry-container">
 			<section class="component-container">
 				<p>
