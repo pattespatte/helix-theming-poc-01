@@ -14,7 +14,7 @@ This means when someone installs `@helix/vue`, they automatically get access to 
 
 ## Evaluating the Three Approaches
 
-### 1. Current Approach: Let consumers use both
+### 1. Current Approach: Let consumers use both Helix and FKUI
 
 **Pros:**
 
@@ -43,18 +43,21 @@ This would involve more extensive overrides in [`packages/design/src/overrides/_
 - Still includes all FKUI code in bundles
 - Potential for CSS specificity conflicts
 
-### 3. Block FKUI components (approach used in current Helix)
+### 3. Block FKUI components
+
+In the current version of Helix, wrappers like `HxButton` are used. FKUI is excluded from the export.
 
 **Technical Implementation Options:**
 
 ```javascript
 // Option A: Selective exports
-import { FButton, FTextField } from '@fkui/vue';
-export { FButton, FTextField }; // Only export what is needed
+// import { FButton, FTextField } from '@fkui/vue';
+// export { FButton, FTextField }; // Only export what is needed
 
 // Option B: Wrapper components only
 // Don't re-export FKUI components directly
 // Only export the Helix wrappers like HxButton
+export { HxButton }; // Only export Helix
 ```
 
 **Benefits of blocking FKUI:**
