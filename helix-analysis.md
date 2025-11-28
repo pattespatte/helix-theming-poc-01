@@ -43,7 +43,7 @@ This would involve more extensive overrides in [`packages/design/src/overrides/_
 - Still includes all FKUI code in bundles
 - Potential for CSS specificity conflicts
 
-### 3. Block FKUI components
+### 3. Wrap and block original FKUI components
 
 In the current version of Helix, wrappers like `HxButton` are used. FKUI is excluded from the export.
 
