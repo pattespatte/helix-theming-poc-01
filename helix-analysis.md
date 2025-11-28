@@ -16,7 +16,7 @@ This means when someone installs `@helix/vue`, they automatically get access to 
 
 ### 1. Current Approach: Let consumers use both Helix and FKUI
 
-Tested in branch: [`main`](tree/main)
+Tested in branch: [`main`](../../tree/main)
 
 **Pros:**
 
@@ -32,7 +32,7 @@ Tested in branch: [`main`](tree/main)
 
 ### 2. Restyle FKUI to match Helix
 
-Tested in branch: [`fkui-restyling`](tree/fkui-restyling)
+Tested in branch: [`fkui-restyling`](../../tree/fkui-restyling)
 
 This would involve more extensive overrides in [`packages/design/src/overrides/_buttons.scss`](packages/design/src/overrides/_buttons.scss) for all FKUI components.
 
@@ -49,7 +49,7 @@ This would involve more extensive overrides in [`packages/design/src/overrides/_
 
 ### 3. Wrap and block original FKUI components
 
-Tested in branch: [`fkui-wrapped-components`](tree/fkui-wrapped-components)
+Tested in branch: [`fkui-wrapped-components`](../../tree/fkui-wrapped-components)
 
 In the current version of Helix, wrappers like `HxButton` are used. FKUI is excluded from the export.
 
