@@ -1,0 +1,55 @@
+// Override FKUI checkbox and radio button styles to match Helix design
+.fkui-checkbox,
+.fkui-radio {
+    font-family: var(--hx-font-family);
+    
+    input[type="checkbox"],
+    input[type="radio"] {
+        border-radius: .25rem;
+        border: 1px solid #757575;
+        
+        &:checked {
+            background-color: var(--hx-primary);
+            border-color: var(--hx-primary);
+        }
+        
+        &:focus {
+            border-radius: .25rem;
+            border: 1px solid #222;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(34, 34, 34, 0.2);
+        }
+    }
+    
+    .checkbox-label,
+    .radio-label,
+    .label {
+        font-family: var(--hx-font-family);
+        color: #333;
+        margin-left: 0.5rem;
+    }
+}
+
+// Standard checkbox and radio styling
+input[type="checkbox"],
+input[type="radio"] {
+    border-radius: .25rem;
+    border: 1px solid #757575;
+    
+    &:checked {
+        background-color: var(--hx-primary);
+        border-color: var(--hx-primary);
+    }
+    
+    &:focus {
+        border-radius: .25rem;
+        border: 1px solid #222;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(34, 34, 34, 0.2);
+    }
+}
+
+// Radio buttons should be round
+input[type="radio"] {
+    border-radius: 50%;
+}

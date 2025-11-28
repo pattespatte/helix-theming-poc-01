@@ -1,0 +1,62 @@
+// Override FKUI form component styles to match Helix design
+.fkui-form,
+.fkui-form-field,
+.fkui-fieldset {
+    font-family: var(--hx-font-family);
+    
+    .form-label,
+    .field-label,
+    .label {
+        font-family: var(--hx-font-family);
+        font-weight: 500;
+        color: #333;
+        margin-bottom: 0.5rem;
+    }
+    
+    .form-hint,
+    .field-hint,
+    .hint {
+        font-family: var(--hx-font-family);
+        font-size: 0.875rem;
+        color: #666;
+        margin-top: 0.25rem;
+    }
+    
+    .form-error,
+    .field-error,
+    .error {
+        color: #d32f2f;
+        font-family: var(--hx-font-family);
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+    }
+}
+
+// Override validation states
+.form-field--invalid,
+.fkui-form-field--invalid {
+    input,
+    textarea,
+    select {
+        border-color: #d32f2f;
+        
+        &:focus {
+            border-color: #d32f2f;
+            box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.2);
+        }
+    }
+}
+
+.form-field--valid,
+.fkui-form-field--valid {
+    input,
+    textarea,
+    select {
+        border-color: #388e3c;
+        
+        &:focus {
+            border-color: #388e3c;
+            box-shadow: 0 0 0 2px rgba(56, 142, 60, 0.2);
+        }
+    }
+}

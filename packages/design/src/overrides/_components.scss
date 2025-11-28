@@ -1,0 +1,111 @@
+// Override FKUI common component styles to match Helix design
+.fkui-card,
+.card {
+    border-radius: .5rem;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: var(--hx-font-family);
+    
+    .card-header,
+    .header {
+        border-bottom: 1px solid #e0e0e0;
+        padding: 1rem;
+        font-weight: 500;
+        color: #333;
+    }
+    
+    .card-body,
+    .body {
+        padding: 1rem;
+    }
+    
+    .card-footer,
+    .footer {
+        border-top: 1px solid #e0e0e0;
+        padding: 1rem;
+        background-color: #f5f5f5;
+    }
+}
+
+.fkui-modal,
+.modal {
+    font-family: var(--hx-font-family);
+    
+    .modal-dialog {
+        border-radius: .5rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .modal-header,
+    .header {
+        border-bottom: 1px solid #e0e0e0;
+        padding: 1rem;
+        font-weight: 500;
+        color: #333;
+    }
+    
+    .modal-body,
+    .body {
+        padding: 1rem;
+    }
+    
+    .modal-footer,
+    .footer {
+        border-top: 1px solid #e0e0e0;
+        padding: 1rem;
+    }
+}
+
+.fkui-alert,
+.alert {
+    border-radius: .25rem;
+    font-family: var(--hx-font-family);
+    
+    &.alert--info,
+    &.alert-info {
+        background-color: #e3f2fd;
+        border-color: #2196f3;
+        color: #0d47a1;
+    }
+    
+    &.alert--success,
+    &.alert-success {
+        background-color: #e8f5e8;
+        border-color: #4caf50;
+        color: #1b5e20;
+    }
+    
+    &.alert--warning,
+    &.alert-warning {
+        background-color: #fff3e0;
+        border-color: #ff9800;
+        color: #e65100;
+    }
+    
+    &.alert--error,
+    &.alert-error {
+        background-color: #ffebee;
+        border-color: #f44336;
+        color: #b71c1c;
+    }
+}
+
+.fkui-table,
+.table {
+    font-family: var(--hx-font-family);
+    
+    th {
+        background-color: #f5f5f5;
+        font-weight: 500;
+        color: #333;
+        border-bottom: 2px solid #e0e0e0;
+    }
+    
+    td {
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    tr:hover {
+        background-color: #f9f9f9;
+    }
+}

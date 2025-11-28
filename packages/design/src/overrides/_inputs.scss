@@ -1,0 +1,139 @@
+// Override FKUI input field styles to match Helix design
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+textarea,
+select {
+    border-radius: .25rem;
+    border: 1px solid #757575;
+    font-family: var(--hx-font-family);
+	box-shadow: none;
+    
+    &:focus {
+        border-radius: .25rem;
+        border: 1px solid #222;
+        outline: none; // Remove default focus outline
+        box-shadow: 0 0 0 2px rgba(34, 34, 34, 0.2); // Add subtle focus ring
+    }
+    
+    &:disabled {
+        background-color: #f5f5f5;
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+}
+
+// Specific FKUI input components - target the actual classes used by FKUI
+.text-field__input,
+.fkui-input,
+.fkui-text-field,
+.fkui-textarea {
+    border-radius: .25rem !important;
+    border: 1px solid #757575 !important;
+    font-family: var(--hx-font-family) !important;
+    box-shadow: none !important;
+    
+    &:focus {
+        border-radius: .25rem !important;
+        border: 1px solid #222 !important;
+        outline: none !important;
+        box-shadow: 0 0 0 2px rgba(34, 34, 34, 0.2) !important;
+    }
+    
+    &:disabled {
+        background-color: #f5f5f5 !important;
+        opacity: 0.7 !important;
+        cursor: not-allowed !important;
+    }
+}
+
+// Target FKUI textarea field components
+.textarea-field__textarea {
+    border-radius: .25rem !important;
+    border: 1px solid #757575 !important;
+    font-family: var(--hx-font-family) !important;
+    box-shadow: none !important;
+    
+    &:focus {
+        border-radius: .25rem !important;
+        border: 1px solid #222 !important;
+        outline: none !important;
+        box-shadow: 0 0 0 2px rgba(34, 34, 34, 0.2) !important;
+    }
+    
+    &:disabled {
+        background-color: #f5f5f5 !important;
+        opacity: 0.7 !important;
+        cursor: not-allowed !important;
+    }
+}
+
+// Target FKUI select field components
+.select-field__select {
+    border-radius: .25rem !important;
+    border: 1px solid #757575 !important;
+    font-family: var(--hx-font-family) !important;
+    box-shadow: none !important;
+    
+    &:focus {
+        border-radius: .25rem !important;
+        border: 1px solid #222 !important;
+        outline: none !important;
+        box-shadow: 0 0 0 2px rgba(34, 34, 34, 0.2) !important;
+    }
+    
+    &:disabled {
+        background-color: #f5f5f5 !important;
+        opacity: 0.7 !important;
+        cursor: not-allowed !important;
+    }
+}
+
+// Add down arrow for FSelectField
+.select-field__icon-wrapper {
+    position: relative;
+    
+    // Hide the original SVG icon
+    .select-field__icon {
+        svg {
+            display: none;
+        }
+    }
+    
+    // Add Unicode "▼" character directly to the wrapper
+    &::after {
+        content: "\25BC"; // Unicode character for "▼" (U+25BC)
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+        font-size: 12px;
+        color: #757575;
+        pointer-events: none;
+    }
+    
+    // Handle hover state
+    &:hover::after {
+        color: #222;
+    }
+}
+
+// Target FKUI text field containers
+.text-field {
+    input {
+        border-radius: .25rem !important;
+        border: 1px solid #757575 !important;
+        font-family: var(--hx-font-family) !important;
+        
+        &:focus {
+            border-radius: .25rem !important;
+            border: 1px solid #222 !important;
+            outline: none !important;
+            box-shadow: 0 0 0 2px rgba(34, 34, 34, 0.2) !important;
+        }
+    }
+}
