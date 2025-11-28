@@ -10,7 +10,7 @@ In [`packages/vue/src/index.js:3`](packages/vue/src/index.js), we are re-exporti
 export * from '@fkui/vue';
 ```
 
-This means when someone installs `@helix/vue`, they automatically get access to all FKUI components as well as the Helix-specific overrides like [`HxButton`](packages/vue/src/components/Button.vue:1).
+This means when someone installs `@helix/vue`, they automatically get access to all FKUI components as well as the Helix-specific overrides like [`HxButton`](packages/vue/src/components/Button.vue).
 
 ## Evaluating the Three Approaches
 
