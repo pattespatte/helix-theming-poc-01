@@ -22,7 +22,7 @@ function extractComponentNames(exports) {
 }
 
 /**
- * Logs all available components from FKUI and Helix
+ * Logs all available Helix components
  * Only runs in development mode
  */
 export function logComponents() {
@@ -35,36 +35,22 @@ export function logComponents() {
 
 	// Import all components from the helix vue package
 	import('@helix/vue').then((helixExports) => {
-		// Since FKUI components are re-exported from @helix/vue, we need to separate them
-		// We'll import FKUI directly to identify which components are from FKUI
-		import('@fkui/vue').then((fkuiExports) => {
-			const fkuiComponentNames = extractComponentNames(fkuiExports);
+		// Get all exports from @helix/vue
+		const allExports = helixExports;
+		const allComponentNames = extractComponentNames(allExports);
 
-			// Get all exports from @helix/vue
-			const allExports = helixExports;
-			const allComponentNames = extractComponentNames(allExports);
+		// Filter to only show Hx-prefixed components (Helix components)
+		const helixComponentNames = allComponentNames.filter(
+			name => name.startsWith('Hx')
+		);
 
-			// Helix components are those that are not in FKUI exports
-			const helixComponentNames = allComponentNames.filter(
-				name => !fkuiComponentNames.includes(name)
-			);
-
-			console.log('');
-			console.log('- FKUI:');
-			fkuiComponentNames.forEach(name => {
-				console.log(`  - ${name}`);
-			});
-
-			console.log('');
-			console.log('- Helix:');
-			helixComponentNames.forEach(name => {
-				console.log(`  - ${name}`);
-			});
-
-			console.log('');
-		}).catch(error => {
-			console.error('Error importing FKUI components:', error);
+		console.log('');
+		console.log('- Helix Components:');
+		helixComponentNames.forEach(name => {
+			console.log(`  - ${name}`);
 		});
+
+		console.log('');
 	}).catch(error => {
 		console.error('Error importing Helix components:', error);
 	});
