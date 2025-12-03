@@ -1,5 +1,8 @@
 <template>
-	<FValidationForm v-bind="$attrs" :class="['helix-validation-form', customClass]">
+	<FValidationForm
+		v-bind="$attrs"
+		:class="['helix-validation-form', customClass]"
+	>
 		<slot />
 	</FValidationForm>
 </template>

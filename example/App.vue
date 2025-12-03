@@ -2,23 +2,38 @@
 	<div id="app">
 		<h1>Components</h1>
 		<h2>Helix components</h2>
-		<div class="masonry-container">			
+		<div class="masonry-container">
 			<section class="component-container">
-				<p><code>HxButton</code> component with <code>density-default</code> applied</p>
-				<HxButton variant="primary" class="density-default"> Helix Themed Button </HxButton>
+				<p>
+					<code>HxButton</code> component with
+					<code>density-default</code> applied
+				</p>
+				<HxButton variant="primary" class="density-default">
+					Helix Themed Button
+				</HxButton>
 			</section>
 			<section class="component-container">
-				<p><code>HxButton</code> component with <code>density-dense</code> applied</p>
-				<HxButton variant="primary" class="density-dense"> Helix Themed Button </HxButton>
+				<p>
+					<code>HxButton</code> component with
+					<code>density-dense</code> applied
+				</p>
+				<HxButton variant="primary" class="density-dense">
+					Helix Themed Button
+				</HxButton>
 			</section>
 			<section class="component-container">
-				<p><code>HxButton</code> component with <code>density-densest</code> applied</p>
-				<HxButton variant="primary" class="density-densest"> Helix Themed Button </HxButton>
+				<p>
+					<code>HxButton</code> component with
+					<code>density-densest</code> applied
+				</p>
+				<HxButton variant="primary" class="density-densest">
+					Helix Themed Button
+				</HxButton>
 			</section>
 		</div>
 
 		<h2>Helix wrapped components</h2>
-			<p>Using Helix wrapper components that wrap FKUI components</p>
+		<p>Using Helix wrapper components that wrap FKUI components</p>
 		<div class="masonry-container">
 			<section class="component-container">
 				<p>
@@ -118,6 +133,4 @@ code {
 	border-radius: 1rem;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-
-
 </style>

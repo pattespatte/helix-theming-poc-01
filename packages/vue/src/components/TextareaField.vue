@@ -1,5 +1,8 @@
 <template>
-	<FTextareaField v-bind="$attrs" :class="['helix-textarea-field', customClass]">
+	<FTextareaField
+		v-bind="$attrs"
+		:class="['helix-textarea-field', customClass]"
+	>
 		<slot />
 	</FTextareaField>
 </template>

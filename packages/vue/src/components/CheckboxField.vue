@@ -1,5 +1,8 @@
 <template>
-	<FCheckboxField v-bind="$attrs" :class="['helix-checkbox-field', customClass]">
+	<FCheckboxField
+		v-bind="$attrs"
+		:class="['helix-checkbox-field', customClass]"
+	>
 		<slot />
 	</FCheckboxField>
 </template>
