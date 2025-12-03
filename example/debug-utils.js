@@ -7,13 +7,55 @@
  * @param {Object} exports - The exports object to analyze
  * @returns {Array<string>} - Array of component names
  */
-function extractComponentNames(exports) {
+function extractComponentNames(exports, prefix = 'F') {
 	const componentNames = [];
+	
+	// List of actual Vue components we want to show for FKUI
+	const fkuiTargetComponents = [
+		'FTextField',
+		'FCard',
+		'FCheckboxField',
+		'FRadioField',
+		'FTextareaField',
+		'FSelectField',
+		'FMessageBox',
+		'FBadge',
+		'FValidationForm',
+		'FButton'
+	];
+
+	// List of actual Vue components we want to show for Helix
+	const helixTargetComponents = [
+		'HxButton',
+		'HxTextField',
+		'HxCard',
+		'HxCheckboxField',
+		'HxRadioField',
+		'HxTextareaField',
+		'HxSelectField',
+		'HxMessageBox',
+		'HxBadge',
+		'HxValidationForm'
+	];
+
+	// Select the appropriate target list based on prefix
+	const targetComponents = prefix === 'Hx' ? helixTargetComponents : fkuiTargetComponents;
 
 	for (const [key, value] of Object.entries(exports)) {
-		// Check if it's a Vue component (has a name property or is a function)
-		if (typeof value === 'function' ||
-			(typeof value === 'object' && value !== null && value.__v_skip !== true)) {
+		// Only include components that:
+		// 1. Start with the specified prefix (F or Hx)
+		// 2. Are in our target components list
+		// 3. Are actual Vue components (have render function or component structure)
+		if (key.startsWith(prefix) &&
+			targetComponents.includes(key) &&
+			(typeof value === 'function' ||
+			(typeof value === 'object' && value !== null && (
+				value.render ||
+				value.template ||
+				value.__vccOpts ||
+				value.setup ||
+				value.components
+			)))) {
 			componentNames.push(key);
 		}
 	}
@@ -38,16 +80,11 @@ export function logComponents() {
 		// Since FKUI components are re-exported from @helix/vue, we need to separate them
 		// We'll import FKUI directly to identify which components are from FKUI
 		import('@fkui/vue').then((fkuiExports) => {
-			const fkuiComponentNames = extractComponentNames(fkuiExports);
+			// Extract FKUI components (F-prefixed)
+			const fkuiComponentNames = extractComponentNames(fkuiExports, 'F');
 
-			// Get all exports from @helix/vue
-			const allExports = helixExports;
-			const allComponentNames = extractComponentNames(allExports);
-
-			// Helix components are those that are not in FKUI exports
-			const helixComponentNames = allComponentNames.filter(
-				name => !fkuiComponentNames.includes(name)
-			);
+			// Extract Helix components (Hx-prefixed) from helix exports
+			const helixComponentNames = extractComponentNames(helixExports, 'Hx');
 
 			console.log('');
 			console.log('- FKUI:');

@@ -216,7 +216,7 @@
 				<div class="button-group">
 					<FButton variant="primary" class="density-default">Primary</FButton>
 					<FButton variant="secondary" class="density-default">Secondary</FButton>
-					<FButton variant="danger" class="density-default">Danger</FButton>
+					<FButton variant="secondary" class="density-default">Secondary</FButton>
 				</div>
 			</section>
 			<section class="component-container">
