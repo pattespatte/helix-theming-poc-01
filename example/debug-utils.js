@@ -1,28 +1,9 @@
 /**
- * Debug utility to list all available components from FKUI and Helix
+ * Debug utility to list all available Hx and F-prefixed components from Helix and FKUI
  */
 
 /**
- * Extracts component names from an object's exports
- * @param {Object} exports - The exports object to analyze
- * @returns {Array<string>} - Array of component names
- */
-function extractComponentNames(exports) {
-	const componentNames = [];
-
-	for (const [key, value] of Object.entries(exports)) {
-		// Check if it's a Vue component (has a name property or is a function)
-		if (typeof value === 'function' ||
-			(typeof value === 'object' && value !== null && value.__v_skip !== true)) {
-			componentNames.push(key);
-		}
-	}
-
-	return componentNames.sort();
-}
-
-/**
- * Logs all available components from FKUI and Helix
+ * Logs all available Hx and F-prefixed components from Helix and FKUI
  * Only runs in development mode
  */
 export function logComponents() {
@@ -31,41 +12,78 @@ export function logComponents() {
 		return;
 	}
 
-	console.log('[DEBUG] Components');
+	console.log('[DEBUG] Component Libraries');
 
-	// Import all components from the helix vue package
-	import('@helix/vue').then((helixExports) => {
-		// Since FKUI components are re-exported from @helix/vue, we need to separate them
-		// We'll import FKUI directly to identify which components are from FKUI
-		import('@fkui/vue').then((fkuiExports) => {
-			const fkuiComponentNames = extractComponentNames(fkuiExports);
+	// Import all components from both packages
+	Promise.all([
+		import('@helix/vue'),
+		import('@fkui/vue')
+	]).then(([helixExports, fkuiExports]) => {
+		// List of Hx-prefixed components to display
+		const hxComponents = [
+			'HxButton',
+			'HxTextField',
+			'HxCard',
+			'HxCheckboxField',
+			'HxRadioField',
+			'HxTextareaField',
+			'HxSelectField',
+			'HxMessageBox',
+			'HxBadge',
+			'HxValidationForm'
+		];
 
-			// Get all exports from @helix/vue
-			const allExports = helixExports;
-			const allComponentNames = extractComponentNames(allExports);
+		// List of F-prefixed components to display
+		const fComponents = [
+			'FTextField',
+			'FCard',
+			'FCheckboxField',
+			'FRadioField',
+			'FTextareaField',
+			'FSelectField',
+			'FMessageBox',
+			'FBadge',
+			'FValidationForm'
+		];
 
-			// Helix components are those that are not in FKUI exports
-			const helixComponentNames = allComponentNames.filter(
-				name => !fkuiComponentNames.includes(name)
-			);
+		// Filter to only include components that are actually available
+		const availableHxComponents = hxComponents.filter(name => name in helixExports);
+		const availableFComponents = fComponents.filter(name => name in fkuiExports);
 
-			console.log('');
-			console.log('- FKUI:');
-			fkuiComponentNames.forEach(name => {
-				console.log(`  - ${name}`);
-			});
-
-			console.log('');
-			console.log('- Helix:');
-			helixComponentNames.forEach(name => {
-				console.log(`  - ${name}`);
-			});
-
-			console.log('');
-		}).catch(error => {
-			console.error('Error importing FKUI components:', error);
+		console.log('');
+		console.log('=== Helix Components ===');
+		availableHxComponents.forEach(name => {
+			console.log(`  - ${name}`);
 		});
+
+		// Show which expected Hx components are not available
+		const missingHxComponents = hxComponents.filter(name => !(name in helixExports));
+		if (missingHxComponents.length > 0) {
+			console.log('');
+			console.log('- Expected but not available:');
+			missingHxComponents.forEach(name => {
+				console.log(`  - ${name}`);
+			});
+		}
+
+		console.log('');
+		console.log('=== FKUI Components ===');
+		availableFComponents.forEach(name => {
+			console.log(`  - ${name}`);
+		});
+
+		// Show which expected F components are not available
+		const missingFComponents = fComponents.filter(name => !(name in fkuiExports));
+		if (missingFComponents.length > 0) {
+			console.log('');
+			console.log('- Expected but not available:');
+			missingFComponents.forEach(name => {
+				console.log(`  - ${name}`);
+			});
+		}
+
+		console.log('');
 	}).catch(error => {
-		console.error('Error importing Helix components:', error);
+		console.error('Error importing components:', error);
 	});
 }
