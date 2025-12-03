@@ -172,6 +172,7 @@
 						@update:value="radioValue = $event"
 						option-value="option1"
 						label="Option 1"
+						name="radio-group"
 						class="density-default"
 					/>
 					<FRadioField
@@ -179,6 +180,7 @@
 						@update:value="radioValue = $event"
 						option-value="option2"
 						label="Option 2"
+						name="radio-group"
 						class="density-default"
 					/>
 					<FRadioField
@@ -186,6 +188,7 @@
 						@update:value="radioValue = $event"
 						option-value="option3"
 						label="Option 3"
+						name="radio-group"
 						class="density-default"
 					/>
 				</div>

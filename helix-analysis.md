@@ -1,5 +1,7 @@
 # The relationship between Helix and FKUI components
 
+We use buttons as an example in this POC.
+
 ## Current Architecture Analysis
 
 The current setup in this POC follows the first approach: **"Let consumers use Helix and FKUI by just installing Helix"**

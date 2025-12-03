@@ -1,13 +1,392 @@
-// Override FKUI button styles
+// Comprehensive FKUI button overrides with Helix styling
+// This file provides extensive overrides for all FKUI button components
+
+// Base button styling
+.button,
+a.button,
+button[type="button"],
+button[type="submit"],
+button[type="reset"] {
+	font-family: var(--hx-font-family) !important;
+	border-radius: var(--hx-border-radius-md) !important;
+	font-weight: var(--hx-font-weight-medium) !important;
+	transition: all var(--hx-transition-normal) !important;
+	outline: none !important;
+
+	&:focus {
+		box-shadow: var(--hx-focus-ring) !important;
+	}
+}
+
+// Primary button variant
 .button.button--primary,
 .button--primary {
-	// Only override what needs to change
-	background-color: var(--hx-primary);
-	font-family: var(--hx-font-family);
-	border-radius: .5rem; // Different from FKUI
+	background-color: var(--hx-primary) !important;
+	border-color: var(--hx-primary) !important;
+	color: var(--hx-color-action-text-inverted-default) !important;
 
 	&:hover {
-		background-color: var(--hx-primary--hover);
-		color: var(--hx-color-action-text-inverted-hover);
+		background-color: var(--hx-primary--hover) !important;
+		border-color: var(--hx-primary--hover) !important;
+		color: var(--hx-color-action-text-inverted-hover) !important;
+	}
+
+	&:active {
+		background-color: var(--hx-primary--active) !important;
+		border-color: var(--hx-primary--active) !important;
+	}
+
+	&:focus {
+		box-shadow: var(--hx-focus-ring) !important;
+	}
+
+	&.disabled,
+	&:disabled,
+	&.button--disabled {
+		background-color: var(--hx-disabled-bg) !important;
+		border-color: var(--hx-disabled-border) !important;
+		color: var(--hx-disabled-text) !important;
+		cursor: not-allowed !important;
+		opacity: var(--hx-disabled-opacity) !important;
+	}
+}
+
+// Secondary button variant
+.button.button--secondary,
+.button--secondary {
+	background-color: transparent !important;
+	border-color: var(--hx-primary) !important;
+	color: var(--hx-primary) !important;
+
+	&:hover {
+		background-color: var(--hx-primary) !important;
+		color: var(--hx-color-action-text-inverted-default) !important;
+	}
+
+	&:active {
+		background-color: var(--hx-primary--active) !important;
+		border-color: var(--hx-primary--active) !important;
+	}
+
+	&:focus {
+		box-shadow: var(--hx-focus-ring) !important;
+	}
+
+	&.disabled,
+	&:disabled,
+	&.button--disabled {
+		background-color: transparent !important;
+		border-color: var(--hx-disabled-border) !important;
+		color: var(--hx-disabled-text) !important;
+		cursor: not-allowed !important;
+		opacity: var(--hx-disabled-opacity) !important;
+	}
+}
+
+// Danger button variant (using error colors)
+.button.button--danger,
+.button--danger {
+	background-color: var(--hx-danger) !important;
+	border-color: var(--hx-danger) !important;
+	color: white !important;
+
+	&:hover {
+		background-color: var(--hx-danger--hover) !important;
+		border-color: var(--hx-danger--hover) !important;
+	}
+
+	&:active {
+		background-color: var(--hx-danger--active) !important;
+		border-color: var(--hx-danger--active) !important;
+	}
+
+	&:focus {
+		box-shadow: var(--hx-focus-ring-danger) !important;
+	}
+
+	&.disabled,
+	&:disabled,
+	&.button--disabled {
+		background-color: #ffcdd2 !important;
+		border-color: #ffcdd2 !important;
+		color: var(--hx-disabled-text) !important;
+		cursor: not-allowed !important;
+		opacity: var(--hx-disabled-opacity) !important;
+	}
+}
+
+// Ghost button variant (using tertiary)
+.button.button--ghost,
+.button.button--tertiary,
+.button--ghost,
+.button--tertiary {
+	background-color: transparent !important;
+	border-color: transparent !important;
+	color: var(--hx-primary) !important;
+
+	&:hover {
+		background-color: var(--hx-ghost-bg) !important;
+		color: var(--hx-primary--hover) !important;
+	}
+
+	&:active {
+		background-color: var(--hx-ghost-bg--hover) !important;
+	}
+
+	&:focus {
+		box-shadow: var(--hx-focus-ring) !important;
+	}
+
+	&.disabled,
+	&:disabled,
+	&.button--disabled {
+		background-color: transparent !important;
+		color: var(--hx-disabled-text) !important;
+		cursor: not-allowed !important;
+		opacity: var(--hx-disabled-opacity) !important;
+	}
+}
+
+// Link button variant (using text)
+.button.button--link,
+.button.button--text,
+.button--link,
+.button--text {
+	background-color: transparent !important;
+	border-color: transparent !important;
+	color: var(--hx-primary) !important;
+	text-decoration: var(--hx-link-decoration) !important;
+	padding: 0 !important;
+
+	&:hover {
+		background-color: transparent !important;
+		color: var(--hx-primary--hover) !important;
+		text-decoration: var(--hx-link-decoration--hover) !important;
+	}
+
+	&:active {
+		background-color: transparent !important;
+		color: var(--hx-primary--active) !important;
+	}
+
+	&:focus {
+		box-shadow: var(--hx-focus-ring) !important;
+		background-color: var(--hx-ghost-bg) !important;
+	}
+
+	&.disabled,
+	&:disabled,
+	&.button--disabled {
+		background-color: transparent !important;
+		color: var(--hx-disabled-text) !important;
+		text-decoration: var(--hx-link-decoration) !important;
+		cursor: not-allowed !important;
+		opacity: var(--hx-disabled-opacity) !important;
+	}
+}
+
+// Button sizes
+.button.button--small,
+.button--small {
+	font-size: var(--hx-button-font-size-sm) !important;
+	padding: var(--hx-button-padding-sm) !important;
+	min-height: var(--hx-button-height-sm) !important;
+}
+
+.button.button--medium,
+.button--medium {
+	font-size: var(--hx-button-font-size-md) !important;
+	padding: var(--hx-button-padding-md) !important;
+	min-height: var(--hx-button-height-md) !important;
+}
+
+.button.button--large,
+.button--large {
+	font-size: var(--hx-button-font-size-lg) !important;
+	padding: var(--hx-button-padding-lg) !important;
+	min-height: var(--hx-button-height-lg) !important;
+}
+
+// Full width buttons
+.button.button--full-width,
+.button--full-width {
+	width: 100% !important;
+	justify-content: center !important;
+}
+
+// Button groups
+.button-group {
+	display: flex !important;
+	gap: var(--hx-spacing-sm) !important;
+
+	.button-group__item {
+		margin: 0 !important;
+	}
+
+	// Remove borders between buttons in groups
+	.button:not(:last-child) {
+		margin-right: var(--hx-spacing-sm) !important;
+	}
+}
+
+// Button with loading state
+.button.is-loading,
+.button.button--loading {
+	position: relative !important;
+	color: transparent !important;
+
+	&::after {
+		content: "" !important;
+		position: absolute !important;
+		width: 1rem !important;
+		height: 1rem !important;
+		top: 50% !important;
+		left: 50% !important;
+		margin-left: -0.5rem !important;
+		margin-top: -0.5rem !important;
+		border: 2px solid transparent !important;
+		border-top-color: currentColor !important;
+		border-radius: var(--hx-border-radius-full) !important;
+		animation: spin 1s linear infinite !important;
+	}
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg) !important;
+	}
+}
+
+// Special button variants
+.button.button--discrete,
+.button--discrete {
+	background-color: transparent !important;
+	border-color: transparent !important;
+	color: var(--hx-primary) !important;
+
+	&:hover {
+		background-color: rgba(35, 41, 72, 0.05) !important;
+	}
+
+	&:active {
+		background-color: var(--hx-ghost-bg) !important;
+	}
+}
+
+.button.button--discrete--black,
+.button--discrete--black {
+	color: #333 !important;
+
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.05) !important;
+	}
+}
+
+.button.button--tertiary--black,
+.button--tertiary--black {
+	color: #333 !important;
+
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.05) !important;
+	}
+}
+
+.button.button--tertiary--underline,
+.button--tertiary--underline {
+	text-decoration: var(--hx-link-decoration) !important;
+
+	&:hover {
+		text-decoration: var(--hx-link-decoration--hover) !important;
+	}
+}
+
+// Button with title variant
+.button.button--title,
+.button--title {
+	font-size: 1.25rem !important;
+	font-weight: var(--hx-font-weight-semibold) !important;
+}
+
+// Button alignment
+.button.button--align-text,
+.button--align-text {
+	text-align: left !important;
+	justify-content: flex-start !important;
+}
+
+// Button margin bottom utility
+.button[class*="button--margin-bottom-"] {
+	margin-bottom: var(--hx-spacing-md) !important;
+}
+
+// High specificity overrides for FKUI components
+.fkui-button,
+.helix-button {
+	font-family: var(--hx-font-family) !important;
+	border-radius: var(--hx-border-radius-md) !important;
+	font-weight: var(--hx-font-weight-medium) !important;
+	transition: all var(--hx-transition-normal) !important;
+	outline: none !important;
+
+	&:focus {
+		box-shadow: var(--hx-focus-ring) !important;
+	}
+
+	// Helix button variants
+	&.helix-button--primary {
+		background-color: var(--hx-primary) !important;
+		border-color: var(--hx-primary) !important;
+		color: var(--hx-color-action-text-inverted-default) !important;
+
+		&:hover {
+			background-color: var(--hx-primary--hover) !important;
+			border-color: var(--hx-primary--hover) !important;
+			color: var(--hx-color-action-text-inverted-hover) !important;
+		}
+	}
+
+	&.helix-button--secondary {
+		background-color: transparent !important;
+		border-color: var(--hx-primary) !important;
+		color: var(--hx-primary) !important;
+
+		&:hover {
+			background-color: var(--hx-primary) !important;
+			color: var(--hx-color-action-text-inverted-default) !important;
+		}
+	}
+
+	&.helix-button--danger {
+		background-color: #d32f2f !important;
+		border-color: #d32f2f !important;
+		color: white !important;
+
+		&:hover {
+			background-color: #b71c1c !important;
+			border-color: #b71c1c !important;
+		}
+	}
+
+	&.helix-button--ghost {
+		background-color: transparent !important;
+		border-color: transparent !important;
+		color: var(--hx-primary) !important;
+
+		&:hover {
+			background-color: rgba(35, 41, 72, 0.1) !important;
+			color: var(--hx-primary--hover) !important;
+		}
+	}
+
+	&.helix-button--link {
+		background-color: transparent !important;
+		border-color: transparent !important;
+		color: var(--hx-primary) !important;
+		text-decoration: underline !important;
+
+		&:hover {
+			text-decoration: none !important;
+			color: var(--hx-primary--hover) !important;
+		}
 	}
 }

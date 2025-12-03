@@ -5,7 +5,7 @@
     border: 1px solid #e0e0e0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-family: var(--hx-font-family);
-    
+
     .card-header,
     .header {
         border-bottom: 1px solid #e0e0e0;
@@ -13,12 +13,12 @@
         font-weight: 500;
         color: #333;
     }
-    
+
     .card-body,
     .body {
         padding: 1rem;
     }
-    
+
     .card-footer,
     .footer {
         border-top: 1px solid #e0e0e0;
@@ -30,12 +30,12 @@
 .fkui-modal,
 .modal {
     font-family: var(--hx-font-family);
-    
+
     .modal-dialog {
         border-radius: .5rem;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
-    
+
     .modal-header,
     .header {
         border-bottom: 1px solid #e0e0e0;
@@ -43,12 +43,12 @@
         font-weight: 500;
         color: #333;
     }
-    
+
     .modal-body,
     .body {
         padding: 1rem;
     }
-    
+
     .modal-footer,
     .footer {
         border-top: 1px solid #e0e0e0;
@@ -60,28 +60,28 @@
 .alert {
     border-radius: .25rem;
     font-family: var(--hx-font-family);
-    
+
     &.alert--info,
     &.alert-info {
         background-color: #e3f2fd;
         border-color: #2196f3;
         color: #0d47a1;
     }
-    
+
     &.alert--success,
     &.alert-success {
         background-color: #e8f5e8;
         border-color: #4caf50;
         color: #1b5e20;
     }
-    
+
     &.alert--warning,
     &.alert-warning {
         background-color: #fff3e0;
         border-color: #ff9800;
         color: #e65100;
     }
-    
+
     &.alert--error,
     &.alert-error {
         background-color: #ffebee;
@@ -93,19 +93,312 @@
 .fkui-table,
 .table {
     font-family: var(--hx-font-family);
-    
+
     th {
         background-color: #f5f5f5;
         font-weight: 500;
         color: #333;
         border-bottom: 2px solid #e0e0e0;
     }
-    
+
     td {
         border-bottom: 1px solid #e0e0e0;
     }
-    
+
     tr:hover {
         background-color: #f9f9f9;
+    }
+}
+
+// Button-like elements in other components
+.fkui-tabs,
+.tabs {
+    font-family: var(--hx-font-family);
+
+    .tab-button,
+    .tab {
+        border-radius: 0.5rem 0.5rem 0 0;
+        font-family: var(--hx-font-family);
+        font-weight: 500;
+
+        &:hover {
+            background-color: rgba(35, 41, 72, 0.05);
+        }
+
+        &.active,
+        &.tab--active {
+            background-color: var(--hx-primary);
+            color: var(--hx-color-action-text-inverted-default);
+            border-bottom-color: var(--hx-primary);
+        }
+    }
+}
+
+.fkui-pagination,
+.pagination {
+    font-family: var(--hx-font-family);
+
+    .pagination-button,
+    .page-button {
+        border-radius: 0.25rem;
+        font-family: var(--hx-font-family);
+        margin: 0 0.25rem;
+
+        &:hover {
+            background-color: rgba(35, 41, 72, 0.05);
+        }
+
+        &.active,
+        &.page-button--active {
+            background-color: var(--hx-primary);
+            color: var(--hx-color-action-text-inverted-default);
+        }
+    }
+}
+
+.fkui-dropdown,
+.dropdown {
+    font-family: var(--hx-font-family);
+
+    .dropdown-toggle,
+    .dropdown-button {
+        border-radius: 0.5rem;
+        font-family: var(--hx-font-family);
+
+        &:hover {
+            background-color: rgba(35, 41, 72, 0.05);
+        }
+    }
+
+    .dropdown-menu {
+        border-radius: 0.5rem;
+        font-family: var(--hx-font-family);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+        .dropdown-item {
+            border-radius: 0.25rem;
+            font-family: var(--hx-font-family);
+
+            &:hover {
+                background-color: rgba(35, 41, 72, 0.05);
+            }
+
+            &.active {
+                background-color: var(--hx-primary);
+                color: var(--hx-color-action-text-inverted-default);
+            }
+        }
+    }
+}
+
+.fkui-breadcrumb,
+.breadcrumb {
+    font-family: var(--hx-font-family);
+
+    .breadcrumb-item {
+        font-family: var(--hx-font-family);
+
+        a {
+            color: var(--hx-primary);
+            text-decoration: none;
+
+            &:hover {
+                color: var(--hx-primary--hover);
+                text-decoration: underline;
+            }
+        }
+
+        &.active {
+            color: #666;
+        }
+    }
+}
+
+.fkui-step-indicator,
+.step-indicator {
+    font-family: var(--hx-font-family);
+
+    .step-button,
+    .step {
+        border-radius: 50%;
+        font-family: var(--hx-font-family);
+
+        &.active,
+        &.step--active {
+            background-color: var(--hx-primary);
+            color: var(--hx-color-action-text-inverted-default);
+        }
+
+        &.completed,
+        &.step--completed {
+            background-color: #4caf50;
+            color: white;
+        }
+    }
+}
+
+.fkui-toggle,
+.toggle {
+    font-family: var(--hx-font-family);
+
+    .toggle-button {
+        border-radius: 0.5rem;
+        font-family: var(--hx-font-family);
+
+        &:hover {
+            background-color: rgba(35, 41, 72, 0.05);
+        }
+
+        &.active,
+        &.toggle-button--active {
+            background-color: var(--hx-primary);
+            color: var(--hx-color-action-text-inverted-default);
+        }
+    }
+}
+
+.fkui-chip,
+.chip {
+    border-radius: 1rem;
+    font-family: var(--hx-font-family);
+
+    .chip-button,
+    .chip-remove {
+        border-radius: 50%;
+        font-family: var(--hx-font-family);
+
+        &:hover {
+            background-color: rgba(35, 41, 72, 0.1);
+        }
+    }
+}
+
+.fkui-tag,
+.tag {
+    border-radius: 0.25rem;
+    font-family: var(--hx-font-family);
+
+    .tag-button,
+    .tag-remove {
+        border-radius: 50%;
+        font-family: var(--hx-font-family);
+
+        &:hover {
+            background-color: rgba(35, 41, 72, 0.1);
+        }
+    }
+}
+
+.fkui-calendar,
+.calendar {
+    font-family: var(--hx-font-family);
+
+    .calendar-nav-button,
+    .calendar-day-button {
+        border-radius: 0.25rem;
+        font-family: var(--hx-font-family);
+
+        &:hover {
+            background-color: rgba(35, 41, 72, 0.05);
+        }
+
+        &.active,
+        &.calendar-day-button--active {
+            background-color: var(--hx-primary);
+            color: var(--hx-color-action-text-inverted-default);
+        }
+
+        &.today,
+        &.calendar-day-button--today {
+            border-color: var(--hx-primary);
+        }
+    }
+}
+
+.fkui-time-picker,
+.time-picker {
+    font-family: var(--hx-font-family);
+
+    .time-button,
+    .time-period-button {
+        border-radius: 0.25rem;
+        font-family: var(--hx-font-family);
+
+        &:hover {
+            background-color: rgba(35, 41, 72, 0.05);
+        }
+
+        &.active,
+        &.time-button--active,
+        &.time-period-button--active {
+            background-color: var(--hx-primary);
+            color: var(--hx-color-action-text-inverted-default);
+        }
+    }
+}
+
+.fkui-date-picker,
+.date-picker {
+    font-family: var(--hx-font-family);
+
+    .date-picker-button,
+    .date-picker-toggle {
+        border-radius: 0.5rem;
+        font-family: var(--hx-font-family);
+
+        &:hover {
+            background-color: rgba(35, 41, 72, 0.05);
+        }
+    }
+}
+
+.fkui-color-picker,
+.color-picker {
+    font-family: var(--hx-font-family);
+
+    .color-picker-button,
+    .color-swatch {
+        border-radius: 0.25rem;
+        font-family: var(--hx-font-family);
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &.active,
+        &.color-swatch--active {
+            border-color: var(--hx-primary);
+            box-shadow: 0 0 0 2px rgba(35, 41, 72, 0.3);
+        }
+    }
+}
+
+.fkui-file-upload,
+.file-upload {
+    font-family: var(--hx-font-family);
+
+    .file-upload-button,
+    .file-select-button {
+        border-radius: 0.5rem;
+        font-family: var(--hx-font-family);
+
+        &:hover {
+            background-color: rgba(35, 41, 72, 0.05);
+        }
+    }
+}
+
+.fkui-search,
+.search {
+    font-family: var(--hx-font-family);
+
+    .search-button,
+    .search-clear-button {
+        border-radius: 0.25rem;
+        font-family: var(--hx-font-family);
+
+        &:hover {
+            background-color: rgba(35, 41, 72, 0.05);
+        }
     }
 }
