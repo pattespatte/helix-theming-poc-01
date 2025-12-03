@@ -17,29 +17,29 @@
 			</section>
 		</div>
 
-		<h2>FKUI components</h2>
-			<p>This setup can still use FKUI components directly</p>
+		<h2>Helix wrapped components</h2>
+			<p>Using Helix wrapper components that wrap FKUI components</p>
 		<div class="masonry-container">
 			<section class="component-container">
 				<p>
-					<code>FTextField</code> component with
+					<code>HxTextField</code> component with
 					<code>density-default</code> applied
 				</p>
-				<FTextField v-model="defaultValue" class="density-default" />
+				<HxTextField v-model="defaultValue" class="density-default" />
 			</section>
 			<section class="component-container">
 				<p>
-					<code>FTextField</code> component with
+					<code>HxTextField</code> component with
 					<code>density-dense</code> applied
 				</p>
-				<FTextField v-model="denseValue" class="density-dense" />
+				<HxTextField v-model="denseValue" class="density-dense" />
 			</section>
 			<section class="component-container">
 				<p>
-					<code>FTextField</code> component with
+					<code>HxTextField</code> component with
 					<code>density-densest</code> applied
 				</p>
-				<FTextField v-model="densestValue" class="density-densest" />
+				<HxTextField v-model="densestValue" class="density-densest" />
 			</section>
 		</div>
 	</div>
@@ -47,8 +47,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { HxButton } from "@helix/vue";
-import { FTextField } from "@fkui/vue";
+import { HxButton, HxTextField } from "@helix/vue";
 import "@helix/design"; // Import theme styles
 
 const value = ref("");
