@@ -1,0 +1,153 @@
+{
+  "foundation": {
+    "colors": [],
+    "typography": [],
+    "spacing": [],
+    "radius": [],
+    "shadow": [],
+    "opacity": [],
+    "other": []
+  },
+  "semantic": {
+    "colors": [
+      {
+        "name": "color/text/primary",
+        "value": "#081130",
+        "type": "COLOR"
+      },
+      {
+        "name": "color/text/secondary",
+        "value": "#414651",
+        "type": "COLOR"
+      },
+      {
+        "name": "icon/color/action/content/weak/default",
+        "value": "#414651",
+        "type": "COLOR"
+      },
+      {
+        "name": "color/background/primary",
+        "value": "#ffffff",
+        "type": "COLOR"
+      },
+      {
+        "name": "color/border/primary",
+        "value": "#717680",
+        "type": "COLOR"
+      },
+      {
+        "name": "color/action/border/primary/default",
+        "value": "#232948",
+        "type": "COLOR"
+      },
+      {
+        "name": "icon/color/feedback/content/negative",
+        "value": "#b42318",
+        "type": "COLOR"
+      },
+      {
+        "name": "color/feedback/text/negative",
+        "value": "#b42318",
+        "type": "COLOR"
+      },
+      {
+        "name": "color/feedback/border/negative",
+        "value": "#d92d20",
+        "type": "COLOR"
+      },
+      {
+        "name": "color/text/disabled",
+        "value": "#717680",
+        "type": "COLOR"
+      },
+      {
+        "name": "icon/color/content/disabled",
+        "value": "#d5d7da",
+        "type": "COLOR"
+      },
+      {
+        "name": "color/background/disabled",
+        "value": "#fafafa",
+        "type": "COLOR"
+      },
+      {
+        "name": "color/border/disabled",
+        "value": "#e9eaeb",
+        "type": "COLOR"
+      }
+    ],
+    "typography": [
+      {
+        "name": "font size/text/md",
+        "value": "16",
+        "type": "FLOAT"
+      },
+      {
+        "name": "typography/font family/label",
+        "value": "Noto Sans",
+        "type": "STRING"
+      },
+      {
+        "name": "line height/text/md",
+        "value": "24",
+        "type": "FLOAT"
+      },
+      {
+        "name": "typography/font weight/semibold",
+        "value": "600",
+        "type": "FLOAT"
+      },
+      {
+        "name": "typography/font family/description",
+        "value": "Noto Sans",
+        "type": "STRING"
+      },
+      {
+        "name": "typography/font weight/regular",
+        "value": "400",
+        "type": "FLOAT"
+      },
+      {
+        "name": "typography/font family/body",
+        "value": "Noto Sans",
+        "type": "STRING"
+      }
+    ],
+    "spacing": [],
+    "radius": [],
+    "shadow": [],
+    "opacity": [],
+    "other": [
+      {
+        "name": "💻 Standard/label",
+        "value": "Font(family: \"typography/font family/label\", style: SemiBold, size: font size/text/md, weight: typography/font weight/semibold, lineHeight: line height/text/md, letterSpacing: 0)",
+        "type": "COMPOSITE"
+      },
+      {
+        "name": "💻 Standard/description",
+        "value": "Font(family: \"typography/font family/description\", style: Regular, size: font size/text/md, weight: typography/font weight/regular, lineHeight: line height/text/md, letterSpacing: 0)",
+        "type": "COMPOSITE"
+      },
+      {
+        "name": "💻 Standard/Body",
+        "value": "Font(family: \"typography/font family/body\", style: Regular, size: font size/text/md, weight: typography/font weight/regular, lineHeight: line height/text/md, letterSpacing: 0)",
+        "type": "COMPOSITE"
+      },
+      {
+        "name": "Focus",
+        "value": "Effect(type: DROP_SHADOW, color: #000000, offset: (0, 0), radius: 0, spread: 4); Effect(type: DROP_SHADOW, color: #FFFFFF, offset: (0, 0), radius: 0, spread: 2)",
+        "type": "COMPOSITE"
+      }
+    ]
+  },
+  "component": {
+    "colors": [],
+    "typography": [],
+    "spacing": [],
+    "radius": [],
+    "shadow": [],
+    "opacity": [],
+    "other": []
+  },
+  "unknown": []
+}

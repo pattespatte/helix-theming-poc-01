@@ -414,15 +414,192 @@ const semantic = {
 
 ---
 
-## Next Steps
+## Next Steps: Extracting Actual Variable Data
 
-To complete this analysis with specific details from the Helix file:
+To complete this analysis with specific details from the Helix file, follow these steps:
 
-1. **Select a node** in Figma that uses variables
-2. **Use `get_variable_defs`** to extract actual variable structure
+### Prerequisites
+
+1. **Figma Desktop App**: Must be running and logged in
+2. **File Access**: Open [Helix - Version 0.2.0](https://www.figma.com/design/RaTelScdNhGXaioJ8dCKXJ/Helix---Version-0.2.0)
+3. **Node Selection**: Select a node (component/layer) that uses variables
+
+### Extraction Process
+
+1. **Select a node** in Figma that uses variables (see `EXTRACT_VARIABLES.md` for detailed guide)
+2. **Use `get_variable_defs`** tool with:
+   - `fileKey`: `RaTelScdNhGXaioJ8dCKXJ`
+   - `nodeId`: Extract from URL when node is selected (format: `123:456`)
 3. **Document specific collections** and their relationships
 4. **Map exact connections** between foundation and semantic variables
 5. **Extract mode configurations** for each collection
+
+**See `EXTRACT_VARIABLES.md` for a complete step-by-step guide.**
+
+---
+
+## Actual Variable Structure (To Be Populated)
+
+The following sections will be populated with actual data extracted from the Helix Figma file:
+
+### Foundation Collections (Actual Data)
+
+<!-- 
+TODO: Replace this section with actual Foundation collection data from get_variable_defs
+Expected format:
+- Collection name
+- Variable names and values
+- Mode configurations
+- Variable types
+-->
+
+**Status**: ⏳ Pending extraction
+
+**Instructions**:
+
+1. Select a node using Foundation variables in Figma
+2. Extract node ID from URL
+3. Call `get_variable_defs` with the node ID
+4. Document the results below
+
+---
+
+### Semantic Collections (Actual Data)
+
+**Status**: ✅ Extracted from "Input with label" component (Node ID: `4122:3074`)
+
+**Extraction Date**: Successfully extracted 24 semantic variables
+
+#### Color Variables (12 variables)
+
+**Text Colors:**
+
+- `color/text/primary` → `#081130` (Type: COLOR)
+- `color/text/secondary` → `#414651` (Type: COLOR)
+- `color/text/disabled` → `#717680` (Type: COLOR)
+
+**Background Colors:**
+
+- `color/background/primary` → `#ffffff` (Type: COLOR)
+- `color/background/disabled` → `#fafafa` (Type: COLOR)
+
+**Border Colors:**
+
+- `color/border/primary` → `#717680` (Type: COLOR)
+- `color/border/disabled` → `#e9eaeb` (Type: COLOR)
+- `color/action/border/primary/default` → `#232948` (Type: COLOR)
+
+**Feedback Colors:**
+
+- `color/feedback/text/negative` → `#b42318` (Type: COLOR)
+- `color/feedback/border/negative` → `#d92d20` (Type: COLOR)
+
+**Icon Colors:**
+
+- `icon/color/action/content/weak/default` → `#414651` (Type: COLOR)
+- `icon/color/feedback/content/negative` → `#b42318` (Type: COLOR)
+- `icon/color/content/disabled` → `#d5d7da` (Type: COLOR)
+
+#### Typography Variables (7 variables)
+
+**Font Sizes:**
+
+- `font size/text/md` → `16` (Type: FLOAT)
+
+**Line Heights:**
+
+- `line height/text/md` → `24` (Type: FLOAT)
+
+**Font Families:**
+
+- `typography/font family/label` → `Noto Sans` (Type: STRING)
+- `typography/font family/description` → `Noto Sans` (Type: STRING)
+- `typography/font family/body` → `Noto Sans` (Type: STRING)
+
+**Font Weights:**
+
+- `typography/font weight/regular` → `400` (Type: FLOAT)
+- `typography/font weight/semibold` → `600` (Type: FLOAT)
+
+#### Composite Variables (4 variables)
+
+**Font Style Compositions:**
+
+- `💻 Standard/label` - Composite font style referencing:
+  - `typography/font family/label`
+  - `font size/text/md`
+  - `typography/font weight/semibold`
+  - `line height/text/md`
+
+- `💻 Standard/description` - Composite font style referencing:
+  - `typography/font family/description`
+  - `font size/text/md`
+  - `typography/font weight/regular`
+  - `line height/text/md`
+
+- `💻 Standard/Body` - Composite font style referencing:
+  - `typography/font family/body`
+  - `font size/text/md`
+  - `typography/font weight/regular`
+  - `line height/text/md`
+
+**Effects:**
+
+- `Focus` - Drop shadow effect for focus states (Type: COMPOSITE)
+
+**Naming Convention**: All variables use semantic slash-separated paths (e.g., `color/text/primary`, `typography/font family/label`)
+
+**Note**: This extraction shows direct values (hex codes, numbers) rather than references to foundation variables. Foundation variables may need to be extracted from different nodes (e.g., color palette swatches).
+
+---
+
+### Foundation → Semantic Connection Map (Actual Data)
+
+**Status**: ⚠️ Partial - Foundation variables not yet extracted
+
+**From "Input with label" extraction:**
+
+The extracted semantic variables show **direct values** (hex codes, numbers) rather than references to foundation variables. This could mean:
+
+1. **Foundation variables exist but aren't used in this component** - They may be defined in color palette nodes
+2. **The extraction shows resolved values** - Figma may resolve references to show final values
+3. **Foundation variables are defined elsewhere** - Need to extract from different nodes
+
+**Composite Variable References (Semantic → Semantic):**
+
+| Composite Variable | References | Type |
+|-------------------|------------|------|
+| `💻 Standard/label` | `typography/font family/label`, `font size/text/md`, `typography/font weight/semibold`, `line height/text/md` | Semantic → Semantic |
+| `💻 Standard/description` | `typography/font family/description`, `font size/text/md`, `typography/font weight/regular`, `line height/text/md` | Semantic → Semantic |
+| `💻 Standard/Body` | `typography/font family/body`, `font size/text/md`, `typography/font weight/regular`, `line height/text/md` | Semantic → Semantic |
+
+**Next Steps**: Extract foundation variables from color palette nodes to map Foundation → Semantic connections.
+
+---
+
+### Mode Configurations (Actual Data)
+
+**Status**: ⚠️ No mode information in current extraction
+
+**From "Input with label" extraction:**
+
+The extracted variables show **single values** without mode configurations. This could mean:
+
+1. **Variables support modes but extraction shows default mode** - Need to check variables in different mode contexts
+2. **This component only uses default mode** - May need to extract from components explicitly using dark/light modes
+3. **Mode information requires different extraction method** - May need to query variable collections directly
+
+**Observed Values:**
+
+- All color variables show single hex values (no mode variants)
+- Typography variables show single values (no mode variants)
+- No mode indicators in variable names or structure
+
+**Next Steps**:
+
+- Extract variables from components in dark mode context
+- Check if variable collections have mode configurations
+- Query variable definitions with mode parameters
 
 ---
 
